@@ -4,7 +4,9 @@ import numpy as np
 import glob
 import matplotlib.pyplot as plt
 
-def stretch_and_average(arrays):
+#this file is to take multiple excel files that contain the averaged graphs for each picture and puts them together in one graph
+
+def stretch_and_average(arrays): #this function takes multiple arrays and by interpolating values, it makes them all the same length and averages them 
     # Find the maximum length among all arrays
     max_length = max(len(array) for array in arrays)
 
@@ -28,7 +30,7 @@ def stretch_and_average(arrays):
     return average_array, stretched_arrays
 
 
-def process_csv_files(pattern):
+def process_csv_files(pattern): #this function is used to average all the different cells together in one file 
     # Get a list of all CSV files matching the pattern
     csv_files = glob.glob(pattern)
 
@@ -50,7 +52,7 @@ def process_csv_files(pattern):
         arrays.append(array)
 
     # Call the stretch_and_average function to calculate the results
-    results, streches = stretch_and_average(arrays)
+    results, stretches = stretch_and_average(arrays)
 
     return results
 
@@ -69,7 +71,7 @@ average_array, single_stretched_arrays = stretch_and_average(results)
 # Create a figure and axes for the plot
 fig, ax = plt.subplots()
 
-# Plot the intensity values for each result with different colors
+# Plot the intensity values for each result with different colours
 ax.plot(single_stretched_arrays[0], label='CLK+ PC')
 ax.plot(single_stretched_arrays[1], label='CLK- PC')
 ax.plot(single_stretched_arrays[2], label='CLK+ ST6KO')
