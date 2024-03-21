@@ -4,7 +4,7 @@ import os
 import csv
 
 
-def create_masks(image_path, min_area):
+def create_masks(image_path, min_area): #the function takes as input an image and returns masks that are taken in function of the blue color. 
     # Load the image
     image = cv2.imread(image_path)
     # Remove fully white elements from the image
@@ -63,7 +63,7 @@ def create_masks(image_path, min_area):
     return masks
 
 
-def count_speckles(image, masks, threshold):
+def count_speckles(image, masks, threshold): #this function counts the speckles for every mask provided given a certain treshold
     # Convert the color string to BGR format
     color_bgr = [0, 255, 0]  # Green color
 
@@ -92,7 +92,7 @@ def count_speckles(image, masks, threshold):
 
 import matplotlib.pyplot as plt
 
-def slice_and_plot(image, masks):
+def slice_and_plot(image, masks): #this function slices the cell with multiple lines (in this case 3) equally distant from each other and then provides a graph for each mask that is the sum of the different graphs per line.
     # Convert the color string to BGR format
     color_bgr = [0, 255, 0]  # Green color
     intensity_values_list = []  # Create a list to store the intensity values for each cell
