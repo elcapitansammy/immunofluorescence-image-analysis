@@ -3,7 +3,7 @@ import numpy as np
 import os 
 import csv
 
-def create_masks(image_path, min_area):
+def create_masks(image_path, min_area): #this function takes as input an image and creates masks based on the blue colour, for best results the thresholding should be between 40 and 70. 
     # Load the image
     image = cv2.imread(image_path)
     # Remove fully white elements from the image
@@ -66,7 +66,7 @@ def create_masks(image_path, min_area):
     return masks, areas
 
 
-def calculate_average_intensity(image, masks, color):
+def calculate_average_intensity(image, masks, color): #this function takes an image as input and the masks calculated with the previous function. Within each masks, the average intensity of the color is calculated. 
     # Convert the color string to BGR format
     if color.lower() == 'blue':
         color_bgr = [255, 0, 0]
@@ -93,7 +93,7 @@ def calculate_average_intensity(image, masks, color):
 
     return average_intensities
 
-def save_average_intensities_to_csv(average_intensities1, average_intensities2, average_intensities3, areas, name):
+def save_average_intensities_to_csv(average_intensities1, average_intensities2, average_intensities3, areas, name): #function to save everything in a csv
     # Create a list of dictionaries for each average intensity and area
     data = []
     for i in range(len(average_intensities1)):
@@ -112,7 +112,7 @@ def save_average_intensities_to_csv(average_intensities1, average_intensities2, 
         writer.writerows(data)
 
 
-def calculate_and_save(image_path, name):
+def calculate_and_save(image_path, name): 
     blue_masks, areas = create_masks(image_path+'DAPI.tif', 200)
     image = cv2.imread(image_path+'AF647.tif')
     average_intensities_D_red = calculate_average_intensity(image, blue_masks, 'red')
