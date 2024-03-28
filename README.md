@@ -7,3 +7,5 @@ restarting.py:
 speckles_count.py:
 - function to create masks (cells) based on the Blue color (DAPI) of a immunofluorescent image.
 - function to create graphs to analyze the intensity of the green color in each cell. 
+
+Note: this code has been developed in collaboration with github copilot
