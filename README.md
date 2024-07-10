@@ -1,11 +1,11 @@
 This is a basic analysis tool for analyzing immunofluorescent images of cells. Hope it is simpler to use than imageJ for basic tasks such as cell counting and color analysis. 
 
-### Update: Graphical Interface added Added ###
+# Update: Graphical Interface added Added #
 https://image-analysis-capitan.streamlit.app/
 
 The graphical interface facilitates the visualization and creation of masks for images. These masks can be saved and applied to different images. Beneath the preview of the image with its mask, the average color within each masked area can be calculated. Additionally, a CSV file containing this data can be generated and downloaded from the website.
 
-# coming soon #
+### coming soon ###
 Color graphical analysis for each image
 
 ### For developpers ###
