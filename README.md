@@ -5,10 +5,12 @@ https://image-analysis-capitan.streamlit.app/
 
 The graphical interface facilitates the visualization and creation of masks for images. These masks can be saved and applied to different images. Beneath the preview of the image with its mask, the average color within each masked area can be calculated. Additionally, a CSV file containing this data can be generated and downloaded from the website.
 
+Note: The code for the GUI can be found in the master branch
+
 ### coming soon ###
 Color graphical analysis for each image
 
-### For developpers ###
+# For developpers #
 The most important files are the restarting.py file and the speckles_count.py. They contain the most important function that are used to calculate the colors and the masks  
 
 restarting.py: 
